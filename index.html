@@ -316,7 +316,7 @@
 
     <script>
         const TSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRepSmGtFPCh9RkPwFrprV565aDE5tIgnUDUjvvkYaYCX_Mkf-zVLMx5mJL_jbAm97MYM7SLV6-hdd6/pub?output=tsv';
-        const GITHUB_RAW = 'https://raw.githubusercontent.com/beamazingcolors/eltiomartin/main/';
+        const GITHUB_RAW = 'https://raw.githubusercontent.com/beamazingcolors/ha-azul/main/';
 
         let fullData = [];
         let isMainSiteActive = false;
@@ -441,7 +441,6 @@
             let fileName = codigo.trim();
             
             if (step === 0) {
-                // Intento 2: Añadir el guion "-1" antiguo (ej: ANGELINA-1.jpg)
                 img.dataset.step = "1";
                 if (!fileName.includes('-1')) {
                     img.src = GITHUB_RAW + encodeURIComponent(fileName + '-1.jpg');
@@ -449,14 +448,12 @@
                 }
             } 
             if (step === 1 || (step === 0 && fileName.includes('-1'))) {
-                // Intento 3: Pasar a minúsculas y reemplazar espacios por guiones medios (ej: big-time.jpg)
                 img.dataset.step = "2";
                 let cleanName = fileName.replace(/\s+/g, '-').toLowerCase();
                 img.src = GITHUB_RAW + encodeURIComponent(cleanName + '.jpg');
                 return;
             }
             if (step === 2) {
-                // Intento 4: Combinar minúsculas con el guion "-1" final (ej: big-time-1.jpg)
                 img.dataset.step = "3";
                 let cleanName = fileName.replace(/\s+/g, '-').toLowerCase();
                 if (!cleanName.includes('-1')) {
@@ -464,7 +461,6 @@
                     return;
                 }
             }
-            // Si todo falla por completo, se oculta la imagen vacía con sutileza
             img.style.opacity = '0';
         }
 
