@@ -10,10 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-ocean-light: #f4f9fc;    /* Fondo limpio con sutil matiz marino */
-            --brand-navy: #04263a;        /* Azul marino profundo para textos y elegancia */
-            --brand-cyan: #48b6e6;        /* Azul cian brillante del logotipo */
-            --brand-blue: #007bbd;        /* Azul corporativo intermedio */
+            --bg-ocean-light: #f4f9fc;    
+            --brand-navy: #04263a;        
+            --brand-cyan: #48b6e6;        
+            --brand-blue: #007bbd;        
             --white: #ffffff;
             --text-dark: #0e1e2c;
             --gradient-ocean: linear-gradient(135deg, #48b6e6 0%, #007bbd 100%);
@@ -373,7 +373,7 @@
                 if (!this.isMouse || this.alpha <= 0 || this.size <= 0.1) return;
                 ctx.save();
                 const gradient = ctx.createRadialGradient(this.x, this.y, 0.1, this.x, this.y, this.size);
-                let colorBase = `rgba(72, 182, 230, `; /* Color cian adaptado al logo */
+                let colorBase = `rgba(72, 182, 230, `; 
                 gradient.addColorStop(0, colorBase + `${this.alpha})`);
                 gradient.addColorStop(0.5, colorBase + `${this.alpha * 0.4})`);
                 gradient.addColorStop(1, colorBase + '0)');
@@ -553,7 +553,7 @@
                     
                     ${incluyeHtml}
                     
-                    <a href="https://wa.me/529981230989" target="_blank" class="btn-wa">Reservar ahora</a>
+                    <a href="https://wa.me/qr/3ZZFMSPJBGLJM1" target="_blank" rel="noopener" class="btn-wa">Reservar ahora</a>
                 </div>
             `;
             document.getElementById('modal-overlay').style.display = 'flex';
